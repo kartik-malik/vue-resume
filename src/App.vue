@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <div>
+    
+       <header-section></header-section>
+     <image-grid></image-grid>
+       <project-grid></project-grid>
+       <footer-section></footer-section>
+   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+
+
+
+
+<script>
+import FooterSection from './components/Footer'
+import HeaderSection from './components/Header.vue';
+import ImageGrid from './components/ImageGrid'
+import ProjectGrid from './components/ProjectGrid';
+import './styles/main.scss';
 export default {
+
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components:{
+    HeaderSection,
+    ImageGrid,
+    ProjectGrid,
+    FooterSection
+    
+    }
+
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+ 
 </style>

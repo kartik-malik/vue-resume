@@ -1,0 +1,120 @@
+$color-primary:#373B44;
+$color-primary-dark:#4286f4;
+
+ .header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,$color-primary,$color-primary-dark);
+    background-size: cover;
+    position: relative;
+    background-position: top;
+    clip-path: polygon(0 0,100% 0,100%  75vh,0 100%);
+}
+.heading-primary-main{
+  display: block;
+  font-size: 6rem;
+  letter-spacing: 3.5rem;
+  font-weight: 400;
+  animation: moveInLeft 1s;
+}
+.heading-primary-sub {
+   display: block;
+   font-size: 20px;
+   font-weight: 400;
+   letter-spacing: 1.5rem;
+   text-align: left;
+   animation: moveInRight 1s;
+   margin-bottom: 3rem;
+}
+.text-box{
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   text-align: center;
+}
+.heading-primary {
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    
+}
+@keyframes moveInLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.btn-white{
+  background-color: white;
+  color: #777;
+}
+@keyframes moveInBottom {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.btn-white{
+  background-color: white;
+  color: #777;
+
+}
+
+.btn,.btn:link,.btn:visited{
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s ;
+  position: relative;
+  font-size: 2rem;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 1rem rgba(255, 255, 255,0.2);
+}
+.btn:active{
+  transform: translateY(3px);
+}
+.btn::after {
+  content: "";
+    display: inline-block;
+   transition: all 0.4s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.btn-white::after{
+   background-color: white;
+   color: #777;
+}
+.btn:hover::after{
+  transform: scaleX(1.2);
+  opacity: 0;
+}
+.btn-animated{
+    animation: moveInBottom 1s;
+    animation-fill-mode: backwards;
+}
