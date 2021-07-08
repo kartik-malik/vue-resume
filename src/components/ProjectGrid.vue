@@ -4,7 +4,7 @@
        Learning  Projects
     </h2>
     <div class="project-grid">
-        <project-item v-for="detail in details" :key="detail.source" :source="detail.source" :name="detail.name"></project-item>
+        <project-item v-for="detail in details" :key="detail.source" :href="detail.href" :source="detail.source" :name="detail.name"></project-item>
 
     </div>
 </div>
@@ -19,14 +19,18 @@ export default {
                {
                    source:"react.png",
                    name:"Random choice",
+                   href:"https://react-whatshouldido-app.herokuapp.com/",
+                   
                },
                {
                    source:"budget.png",
                    name:"Budget Manager",
+                   href:"https://e-budget.herokuapp.com/"
                },
                 {
                    source:"yelpcamp.png",
                    name:"Yelp Camp",
+                  href:"https://glacial-harbor-75639.herokuapp.com/",
                }
            ]
         };

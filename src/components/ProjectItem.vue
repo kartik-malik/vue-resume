@@ -1,13 +1,13 @@
 <template>
-    <div class="item"> 
-        <img :src="require(`../assets/${sr}`)" alt="" class="item__img">
-        <h2 class="item__name">{{name}}</h2>
+    <div class="item" @click="openLink"> 
+        <img :src="require(`../assets/${sr}`)" alt="" class="item__img" >
+        <h2 class="item__name" >{{name}}</h2>
     </div>
 </template>
 
 <script>
 export default {
-    props:['source',"name"],
+    props:['source',"name","href"],
     data(){
         return{
             sr:this.source
@@ -17,6 +17,11 @@ export default {
       getImgUrl(pic) {
     return require('../assets/'+pic)
 }
+    },
+    methods:{
+        openLink(){
+            window.open(this.href, '_blank');
+        }
     }
 }
 </script>
