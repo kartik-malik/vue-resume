@@ -2,8 +2,11 @@
      <header-section></header-section>
      <image-grid></image-grid>
        <project-grid></project-grid>
-       <footer-section></footer-section>
-       
+       <div ref="footer" class="isVisible" v-observe-visibility="{callback:pr,intersection:{
+            threshold: 0,
+       },once:true}"> 
+       <footer-section   ></footer-section>
+       </div>
 </template>
 <script>
 import FooterSection from './Footer'
@@ -16,6 +19,26 @@ export default {
     ImageGrid,
     ProjectGrid,
     FooterSection
+    },
+    data(){
+         return {
+              isVisible:false,
+              counter:0
+         }
+    },
+    methods:{
+         pr(isVisible){
+              this.isVisible=isVisible;
+              if(this.isVisible)
+               this.$refs.footer.style.transform="translateY(0)";
+         }
     }
 }
 </script>
+<style scoped>
+
+.isVisible {
+ transform: translateY(6rem);
+ transition: all 0.2s;
+}
+</style>

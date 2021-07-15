@@ -29,6 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .item {
+    cursor:pointer;
     box-shadow: 0 2rem 4rem rgba($color: #000000, $alpha: 0.4);
     display: grid;
 grid-template-columns: repeat(2,1fr);    &__name{

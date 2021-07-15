@@ -4,12 +4,19 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%; 
+  height: 100%;
+}
   @media screen and (max-width: 900px) {
     html {
-      font-size: 50%; } }
-
+      font-size: 50%; } 
+    }
+    @media screen and (max-width: 600px) {
+      html {
+        font-size: 30%; } 
+      }
 body {
+  height: 100%;
   font-family: "Lato",sans-serif;
   font-weight: 400;
   font-size: 3rem;

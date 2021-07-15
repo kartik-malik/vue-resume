@@ -1,4 +1,10 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp} from 'vue'
+import   'animate.css'
 
-createApp(App).mount('#app')
+import App from './App.vue'
+import router from './router';
+import VueObserver from 'vue3-observe-visibility2'
+const app=createApp(App);
+app.use(VueObserver)
+app.use(router);
+app.mount('#app');

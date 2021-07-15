@@ -1,6 +1,12 @@
 <template>
-    <div>
-        <h1 class="img-grid__heading">
+    <div ref="imageGrid" class="imageGrid" :class="{}" v-observe-visibility="{
+        callback:isVisibleNow,
+        intersection:{
+            thresold:0.5,
+        },
+        once:true
+    }">
+        <h1 class="img-grid__heading ">
             Skills
         </h1>
         <div class="img-grid">
@@ -15,10 +21,29 @@
 
 <script>
 export default {
-    
+    data(){
+        return {
+          isVisible:false
+        }
+    },methods:{
+         isVisibleNow(isVisible){
+              this.isVisible=isVisible;
+              if(this.isVisible)
+               {
+                   this.$refs.imageGrid.style.opacity=1;
+                   this.$refs.imageGrid.style.transform="translateY(0)";
+               }      
+         }
+    }
+
 }
 </script>
 <style lang="scss" scoped>
+.imageGrid{
+    opacity: 0;
+    transform:translateY(20rem);
+    transition: all 0.8s;
+}
 $color-primary:#373B44;
 $color-primary-dark:#4286f4;
 
@@ -52,10 +77,12 @@ $color-primary-dark:#4286f4;
         color: $color-primary-dark;
         margin-bottom: 2rem;
          transition: all 0.3s;
+        // animation: bounce 2s;
         text-align: center;
         &:hover{
             transform: skewY(7deg) scale(1.2);
         }
     }   
    }
+
 </style>

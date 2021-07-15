@@ -2,20 +2,20 @@
 
  <div  id="mySidepanel" class="sidepanel" ref="sidepanel">
            <a href="javascript:void(0)" class="closebtn" @click="hideBar">&times;</a>
-  <a href="#" class="sidepanel__links">About</a>
+  <router-link to="/about" class="sidepanel__links">About</router-link>
   <a href="#" class="sidepanel__links">Services</a>
-  <a href="#" class="sidepanel__links">Clients</a>
-  <a href="#" class="sidepanel__links">Contact</a>
+  <router-link to="/projects" class="sidepanel__links">Projects</router-link>
+  <router-link to="/contact" class="sidepanel__links">Contact </router-link>
      </div>
    <div class="" :class="[sidebar?'main__grid-2':'main__grid']">
-     <div class="side-bar" @click="setBarVisible" >
-  <button class="nav-btn" @click="setBarVisible"></button>
-    
+     <div class="side-bar"  >
+     <div @click="setBarVisible">  <button class="nav-btn" ></button>
+</div>    
     
  
 </div >
     <div @click="hideBar">
-      <Home/>
+      <router-view/>
     </div>
    </div>
 </template>
@@ -28,12 +28,12 @@
 <script>
 
 import './styles/main.scss';
-import Home from './components/Home.vue'
+// import Home from './components/Home.vue'
 export default {
 
   name: 'App',
   components:{
-   Home
+
     
     },
    data(){
@@ -44,11 +44,11 @@ export default {
    methods:{
      setBarVisible(){
        this.sidebar=!this.sidebar;
-       document.getElementById("mySidepanel").style.width="200px";
+       this.$refs.sidepanel.style.width="20%";
      },
      hideBar(){
     
-       document.getElementById("mySidepanel").style.width="0";
+       this.$refs.sidepanel.style.width="0%";
          this.sidebar=false;
        
      }
@@ -57,20 +57,28 @@ export default {
 </script>
 
 <style lang="scss">
+#app{
+  height: 100%;
+}
  .main__grid{
    display: grid;
    grid-template-columns: min-content min-content;
-   grid-template-columns: 50px 1fr;
+   grid-template-columns: 5% 95%;
+   height: 100%;
+   
  }
  .main__grid-2{
    display: grid;
-   grid-template-columns: 200px 1fr;
+   height: 100%;
+   
+   grid-template-columns: 20% 80%;
 
  }
  .side-bar {
    background-color: #373B44;
  }
  .nav-btn{
+   content: "";
     border: none;
     border-radius: 0;
     background-color: white;
@@ -132,8 +140,14 @@ export default {
   // position: absolute;
   // right: 10px;
   text-decoration: none;
-  color:#373B44
-
+  color:#373B44;
+  text-align: right;
+  padding-right: 4rem;
+  font-size:5rem
+   
+}
+.sidepanel__links{
+  padding-bottom: 3rem;
 }
 
 
