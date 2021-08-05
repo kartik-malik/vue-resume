@@ -12,8 +12,11 @@
 </template>
 
 <script>
+import Details from './Details.vue'
 export default {
-   
+   components:{
+       Details
+   }
 }
 </script>
 

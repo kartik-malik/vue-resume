@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 .contact {
+    height: 100%;
     display: flex;
     /* width: 90%; */
     padding: 0 4rem;
@@ -37,7 +38,7 @@ background: linear-gradient( rgba(96,96,193,1) 1%, rgba(19,87,101,1) 98%);
 }
 .contact__input{
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     padding: 1rem 1.5rem;
     width: 100%;
     border-radius: 0.5rem;
@@ -66,6 +67,7 @@ background: linear-gradient( rgba(96,96,193,1) 1%, rgba(19,87,101,1) 98%);
  padding: 4rem 4rem;
 }
 .contact__submit {
+    margin-top: 2rem;
     padding: 1rem;
     border: none;
     border-radius: 100px;

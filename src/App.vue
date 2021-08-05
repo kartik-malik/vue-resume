@@ -2,8 +2,8 @@
 
  <div  id="mySidepanel" class="sidepanel" ref="sidepanel">
            <a href="javascript:void(0)" class="closebtn" @click="hideBar">&times;</a>
+  <router-link to="/" class="sidepanel__links">Home</router-link>
   <router-link to="/about" class="sidepanel__links">About</router-link>
-  <a href="#" class="sidepanel__links">Services</a>
   <router-link to="/projects" class="sidepanel__links">Projects</router-link>
   <router-link to="/contact" class="sidepanel__links">Contact </router-link>
      </div>

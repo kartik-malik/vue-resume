@@ -1,14 +1,16 @@
 <template>
 <h1 class="detail__heading">
     Project
+</h1>
          <div class="detail">
 
-    <Details v-for="detail in details" :key="detail.source" :source="detail.source" :name="detail.name"
+    <Details v-for="detail in details"
+    :href="detail.href"
+     :key="detail.source" :source="detail.source" :name="detail.name"
      :desc="detail.desc"
      
      />
          </div>
-</h1>
    
 </template>
 <script>
@@ -51,28 +53,45 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 </script>
 
 <style lang="scss" >
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Qahiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 .detail{
     display: grid;
     // height: 30vh;
     padding:8rem 3rem;
     grid-row-gap: 10rem;
     grid-template-rows: repeat(auto-fit,min-content);
-    grid-template-columns:  repeat(auto-fit,minmax(350px,1fr)) ;
+    grid-template-columns:  repeat(auto-fit,minmax(max-content,1fr)) ;
+    grid-column-gap: 5rem;
   &__image{
      height: 70%;
+     cursor: pointer;
      align-self: center;
      width: 50%;
+     box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.4);
      justify-self: center;
+      transition: all 0.2s;
+     &:hover{
+         outline:1.5rem solid rgba(49, 49, 194, 0.788);
+       transform:scale(1.05); outline-offset: 1rem;
+     }
   }
   &__heading {
+          font-family: 'Montserrat', sans-serif;
       text-align: center;
-  }
+      cursor: pointer;
+  
+    }
+
+
   &__p{
-      font-size: 2.2rem;
+      font-size: 1.8rem;
+      font-weight: lighter;
+          font-family: 'Comfortaa', cursive;
   }
   
 }
-@media screen {
+@media screen  and (max-width:800px){
       .detail{
           grid-gap: 5rem;
           &__image{
