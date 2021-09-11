@@ -10,11 +10,25 @@
             Skills
         </h1>
         <div class="img-grid">
-      <img src="../assets/html.jpg" alt="" class="img-grid__img img-grid__img--html">
+            <i class="icon-cplusplus"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-css3"></i>
+            <i class="fab fa-node"></i>
+            <i class="icon-mongodb"></i>
+            <i class="icon-mysql"></i>
+            <i class="icon-reactjs"></i>
+            <i class="icon-sass"></i>
+            <!-- <i class="icon-vuejs"></i> -->
+            <!-- <i class="icon-angular"></i> -->
+
+
+
+      <!-- <img src="../assets/html.jpg" alt="" class="img-grid__img img-grid__img--html">
       <img src="../assets/download.jpg" alt="" class="img-grid__img">
             <img src="../assets/node.jpg" alt="" class="img-grid__img img-grid__img--node">
             <img src="../assets/react.jpg" alt="" class="img-grid__img">
-        <img src="../assets/vue.jpg" alt="" class="img-grid__img">
+        <img src="../assets/vue.jpg" alt="" class="img-grid__img"> -->
+
         </div>
     </div>
 </template>
@@ -39,6 +53,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$color-primary-dark:#4286f4;
+
 .imageGrid{
     opacity: 0;
     transform:translateY(20rem);
@@ -82,7 +98,12 @@ $color-primary-dark:#4286f4;
         &:hover{
             transform: skewY(7deg) scale(1.2);
         }
-    }   
+    }
    }
-
+   i {
+       font-size: 5rem;
+       &:hover{
+           color:$color-primary-dark;
+       }
+}
 </style>
