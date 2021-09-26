@@ -30,14 +30,16 @@ export default {
         username: this.username,
         password: this.password,
       }).then((res)=>{
-          console.log(res.data);
+        const data =res.data;
+        console.log(data.username)
+           this.$emit('loggedIn',data.username);
       }).catch((err)=>{
           console.log(err.response.data);
           alert(err.response.data.error.message);
       });
     },
   },
-  emits: ["toggleModal", "logIn"],
+  emits: ["toggleModal", "loggedIn"],
 };
 </script>
 <style lang="scss" scoped>

@@ -4,7 +4,7 @@
         <div class="text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary-main">
-                 KARTIK MALIK
+                 {{userName.val}}
                 </span>
                 <span class="heading-primary-sub">Web developer</span>
             </h1>
@@ -15,7 +15,11 @@
 
 <script>
 export default {
+  inject:['userName'],
 emits:['toggleModal'],
+computed:{
+  
+},
 methods:{
 
 }

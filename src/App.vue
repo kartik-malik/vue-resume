@@ -15,7 +15,7 @@
  
 </div >
     <div @click="hideBar"  class="mainContainer" >
-         <Modal v-if="modalVisible" @toggleModal="toggleModal"></Modal>
+         <Modal v-if="modalVisible" @toggleModal="toggleModal" @loggedIn="setUser"></Modal>
 
       <router-view @toggleModal="toggleModal"/>
     </div>
@@ -29,7 +29,6 @@
 
 
 <script>
-
 import './styles/main.scss';
 // import axios from 'axios'
 // import Home from './components/Home.vue'
@@ -45,14 +44,21 @@ export default {
      return {
        sidebar:false,
        isLoggedIn:false,
-       username:'',
+       username:{
+         val:''
+       },
        error:null,
        modalVisible:false
      }
    },
+   computed:{
+     userName(){
+       return this.username.val || 'kartik malik';
+     }
+   },
    provide(){
      return {
-       username:this.username,
+       userName:this.username,
 
      }
    },
@@ -75,6 +81,10 @@ export default {
       //  this.modalVisible=false;
        this.sidebar=false;
         
+     },
+     setUser(username){
+       this.username.val=username
+       console.log('emitted loggedin'+this.username.val)
      }
    }
 }
