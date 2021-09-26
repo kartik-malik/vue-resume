@@ -4,7 +4,7 @@
            <img src="../assets/email.png" alt=""  class="contact__img">
        </div>
        <div class="contact__col-2">
-            <form class="contact__form" action="mailto:kartikmalikboss@gmail.com">
+            <form class="contact__form" @submit.prevent="submitData">
                 <label for="name" class="contact__label">Name</label>
            <input type="text" placeholder="Name" id="name" class="contact__input" autofocus>       
          <label for="email" class="contact__label" >Email</label>
@@ -21,11 +21,15 @@
 
 <script>
 export default {
-    
+    methods:{
+        submitData(){
+            alert("hi");
+        }
+    }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .contact {
     height: 100%;
     display: flex;
@@ -55,6 +59,10 @@ background: linear-gradient( rgba(96,96,193,1) 1%, rgba(19,87,101,1) 98%);
   width: 40%;
   display: flex;
   justify-content: center;
+  &:hover {
+      animation: hoverEffect 0.5s cubic-bezier(1, 0, 0, 1)   5 ;
+      //    animation-delay: 3s;
+  }
 }
 .contact__img{
     /* width: 100%; */
@@ -79,10 +87,10 @@ background: linear-gradient( rgba(96,96,193,1) 1%, rgba(19,87,101,1) 98%);
     transition: all 0.2s;
 }
 .contact__submit:hover{
-    transform: translateY(-3px);
+    transform: translateY(-10px);
 }
 .contact__submit:active{
-    transform: translateY(3px) ;
+    transform: translateY(10px) ;
 }
 .contact__form{
 
@@ -105,6 +113,16 @@ font-size: 2rem;
     .contact__input{
      /* padding: rem; */
       margin-top: 1.5rem;
+    }
+}
+@keyframes hoverEffect {
+    from {
+                transform:rotate(-40deg);
+
+    }
+    to {
+                transform:rotate(40deg);
+
     }
 }
 </style>

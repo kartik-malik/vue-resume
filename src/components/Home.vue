@@ -1,5 +1,5 @@
 .<template>
-     <header-section></header-section>
+     <header-section @toggleModal="$emit('toggleModal')"></header-section>
      <image-grid></image-grid>
        <project-grid></project-grid>
        <div ref="footer" class="isVisible" v-observe-visibility="{callback:pr,intersection:{
@@ -26,6 +26,8 @@ export default {
               counter:0
          }
     },
+emits:['toggleModal'],
+
     methods:{
          pr(isVisible){
               this.isVisible=isVisible;

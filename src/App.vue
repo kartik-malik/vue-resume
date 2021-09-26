@@ -1,8 +1,8 @@
 <template>
-
+<div>
  <div  id="mySidepanel" class="sidepanel" ref="sidepanel">
            <a href="javascript:void(0)" class="closebtn" @click="hideBar">&times;</a>
-  <router-link to="/" class="sidepanel__links">Home</router-link>
+  <router-link to="/" class="sidepanel__links" >Home</router-link>
   <router-link to="/about" class="sidepanel__links">About</router-link>
   <router-link to="/projects" class="sidepanel__links">Projects</router-link>
   <router-link to="/contact" class="sidepanel__links">Contact </router-link>
@@ -14,9 +14,12 @@
     
  
 </div >
-    <div @click="hideBar">
-      <router-view/>
+    <div @click="hideBar"  class="mainContainer" >
+         <Modal v-if="modalVisible" @toggleModal="toggleModal"></Modal>
+
+      <router-view @toggleModal="toggleModal"/>
     </div>
+   </div>
    </div>
 </template>
 
@@ -28,17 +31,29 @@
 <script>
 
 import './styles/main.scss';
+// import axios from 'axios'
 // import Home from './components/Home.vue'
+import Modal from './components/Modal.vue'
 export default {
 
   name: 'App',
   components:{
 
-    
+    Modal
     },
    data(){
      return {
-       sidebar:false
+       sidebar:false,
+       isLoggedIn:false,
+       username:'',
+       error:null,
+       modalVisible:false
+     }
+   },
+   provide(){
+     return {
+       username:this.username,
+
      }
    },
    methods:{
@@ -51,12 +66,24 @@ export default {
        this.$refs.sidepanel.style.width="0%";
          this.sidebar=false;
        
+     },
+     toggleModal(){
+       console.log('modal');
+       this.modalVisible=!this.modalVisible;
+     },
+     toggleModalAndSideBar(){
+      //  this.modalVisible=false;
+       this.sidebar=false;
+        
      }
    }
 }
 </script>
 
 <style lang="scss">
+.mainContainer{
+  position: relative;
+}
 #app{
   height: 100%;
 }
