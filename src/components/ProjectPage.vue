@@ -24,12 +24,10 @@ export default {
             isVisible:false,
                  details:[
                {
-                   source:"react.png",
-                   name:"Random choice",
-                   href:"https://react-whatshouldido-app.herokuapp.com/",
-                   desc:`Let the random choice generator make a quick decision for you by picking a choice from a selection list of items you provide. It's a quick and easy decision maker.
-This tool is great for making a decision in trivial matters (should I continue building a mobile app or take a nap or etc). When you have many things to do at once, let this tool pick a random choice for you.
-`
+                   source:"tictactoe.png",
+                   name:"Tic tac toe",
+                   href:"https://tic-tac-toe-g4gm.vercel.app/",
+                   desc:`Simple tic tac toe game with drap and drop feature(Desktop) and neat ui`
                },
                {
                    source:"budget.png",

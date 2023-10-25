@@ -17,9 +17,9 @@ export default {
         return {
            details:[
                {
-                   source:"react.png",
-                   name:"Random choice",
-                   href:"https://react-whatshouldido-app.herokuapp.com/",
+                   source:"tictactoe.png",
+                   name:"Tic tac Toe",
+                   href:"https://tic-tac-toe-g4gm.vercel.app/",
                    
                },
                {
